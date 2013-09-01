@@ -13,9 +13,9 @@ public class StudentRowMapper implements RowMapper<Student> {
 		// TODO Auto-generated method stub
 		Student student = new Student();
 		student.setId(rs.getInt("id"));
-		student.setName(rs.getString("name"));
-		student.setAge(rs.getInt("age"));
-
+		student.setBizKeyNo(rs.getString("bizKeyNo"));
+		student.setName(rs.getString("fristName"));
+		student.setCity(rs.getString("city"));
 		return student;
 
 	}

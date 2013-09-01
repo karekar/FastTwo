@@ -13,8 +13,17 @@ public class Student {
 
 	private String name;
 
-	private Integer age;
+	private String city;
+	
+	private String bizKeyNo;
 
+	public Student(){
+		
+		//Just to log
+		System.out.println("DB Layer Jar Student Contructor.......");
+		
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -31,12 +40,27 @@ public class Student {
 		this.name = name;
 	}
 
-	public Integer getAge() {
-		return age;
+	public String getCity() {
+		return city;
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
+	public String getBizKeyNo() {
+		return bizKeyNo;
+	}
+
+	public void setBizKeyNo(String bizKeyNo) {
+		this.bizKeyNo = bizKeyNo;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", city=" + city
+				+ ", bizKeyNo=" + bizKeyNo + "]";
+	}
+
+	
 }

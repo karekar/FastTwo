@@ -18,11 +18,11 @@ public class StudentJDBCTemplate implements StudentDAO {
 	}
 
 	@Override
-	public void create(String name, Integer age) {
+	public void create(String bizKeyNo, String name, String city) {
 		// TODO Auto-generated method stub
-		String sql = "insert into Student (name, age) values (?, ?)";
+		String sql = "insert into tb_ph_common_users (\"bizKeyNo\", \"fristName\", city) values (?, ?, ?)";
 
-		jdbcTemplate.update(sql, name, age);
+		jdbcTemplate.update(sql, bizKeyNo, name, city);
 
 		return;
 
@@ -31,7 +31,7 @@ public class StudentJDBCTemplate implements StudentDAO {
 	@Override
 	public Student getStudent(Integer id) {
 		// TODO Auto-generated method stub
-		String sql = "SELECT ID, NAME, AGE FROM student where ID = ?";
+		String sql = "SELECT id, \"bizKeyNo\", \"fristName\", city FROM tb_ph_common_users where ID = ?";
 		Student student = (Student) jdbcTemplate.queryForObject(sql,
 				new Object[] { id }, new StudentRowMapper());
 
@@ -41,7 +41,8 @@ public class StudentJDBCTemplate implements StudentDAO {
 	@Override
 	public List<Student> listStudents() {
 		// TODO Auto-generated method stub
-		String sql = "SELECT ID, NAME, AGE FROM student";
+		String sql = "SELECT id, \"bizKeyNo\", \"fristName\",, city FROM tb_ph_common_users";
+		
 		List<Student> studentList = jdbcTemplate.query(sql,
 				new StudentRowMapper());
 
@@ -52,7 +53,7 @@ public class StudentJDBCTemplate implements StudentDAO {
 	public void delete(Integer id) {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
-		String sql = "DELETE FROM student WHERE ID = ?";
+		String sql = "DELETE FROM tb_ph_common_users WHERE id = ?";
 		jdbcTemplate.update(sql, id);
 		System.out.println("Deleted Record with ID = " + id);
 		return;
@@ -61,9 +62,9 @@ public class StudentJDBCTemplate implements StudentDAO {
 	@Override
 	public void update(Integer id, Integer age) {
 		// TODO Auto-generated method stub
-		String sql = "update Student set age = ? where id = ?";
-		jdbcTemplate.update(sql, age, id);
-		System.out.println("Updated Record with ID = " + id);
+		//String sql = "update Student set age = ? where id = ?";
+		//jdbcTemplate.update(sql, age, id);
+		System.out.println("Updated Record with id = EMPTY");
 		return;
 	}
 
