@@ -20,7 +20,7 @@ public class Student {
 	public Student(){
 		
 		//Just to log
-		System.out.println("DB Layer Jar Student Contructor.......");
+		System.out.println("........DB Layer Jar Student Contructor.......");
 		
 	}
 	
