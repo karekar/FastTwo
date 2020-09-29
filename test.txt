@@ -1,3 +1,8 @@
 this is a new file that i m 
 creating from aws console to checkin into the git
+
 NEw line added from the console
+
+I modified this one 
+
+I merged the file
